@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
+import Icons from './FontAwesomeIcons';
+
 export const Icons = {
 
   //Credit Cards
@@ -59,4 +61,5 @@ const styles = StyleSheet.create({
   },
 });
 
+export Icons;
 export default Icon;
