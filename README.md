@@ -11,6 +11,14 @@ React Native Fontawesome Icons
 No need to link binaries just import the package and include the Font File
 in your project.
 
+# Usage
+
+# Note on hyphens
+Javascript don't accept hyphens as valid object names hence all hyphens where removed and
+names converted to camel case.
+
+Example: `th-large` becomes `thLarge`
+
 # Why this is fast, and uses almost no extra memory
 This package uses the Text element to render Icons. The Text element delegates
 to the OS the render process of the icons based on the Font file.

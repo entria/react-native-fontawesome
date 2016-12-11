@@ -54,8 +54,8 @@ const Icon = ({ children, style }) => (
 
 const styles = StyleSheet.create({
   icon: {
-    fontFamily: 'FontAwesome',
-    backgroundColor:'transparent',
+    fontFamily:       'FontAwesome',
+    backgroundColor:  'transparent',
   },
 });
 
