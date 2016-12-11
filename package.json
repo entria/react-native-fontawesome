@@ -21,6 +21,9 @@
   ],
   "author": "Rafael Turk",
   "license": "MIT",
+  "dependencies": {
+    "react-native": ">0.26.0"
+  },
   "bugs": {
     "url": "https://github.com/rturk/react-native-fontawesome/issues"
   },
