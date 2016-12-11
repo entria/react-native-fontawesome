@@ -1,6 +1,6 @@
 {
   "name": "react-native-fontawesome",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "Font Awesome Icons for React Native",
   "main": "Icon.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "font",
     "fontawesome",
     "font-awesome",
-    "awesome",
+    "awesome"
   ],
   "author": "Rafael Turk",
   "license": "MIT",
