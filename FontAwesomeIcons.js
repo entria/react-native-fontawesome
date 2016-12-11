@@ -367,7 +367,7 @@ export default const Icons = {
   vk: '\uf189',
   weibo: '\uf18a',
   renren: '\uf18b',
-//3.2
+//Up to V3.2
 
   ccVisa:           '\uf1f0',
   ccMastercard:     '\uf1f1',
