@@ -1,6 +1,6 @@
 {
   "name": "react-native-fontawesome",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Font Awesome Icons for React Native",
   "main": "Icon.js",
   "scripts": {
