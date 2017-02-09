@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, StyleSheet } from 'react-native';
 
 import Icons from './FontAwesomeIcons';
 
-const Icon = ({ children, style }) => (
-  <Text style={[styles.icon, style]}>
-    {Icons[children]}
-  </Text>
-);
+class Icon extends Component {
+  setNativeProps(nativeProps) {
+    this._root.setNativeProps(nativeProps);
+  }
+
+  render() {
+    const { style, color, children } = this.props;
+
+    return (
+      <Text
+        style={[styles.icon, { color }, style]}
+        ref={component => this._root = component}
+      >
+        {Icons[children]}
+      </Text>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   icon: {
