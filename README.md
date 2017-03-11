@@ -1,6 +1,9 @@
 # react-native-fontawesome
 React Native Fontawesome Icons
 
+[![npm version](https://img.shields.io/npm/v/react-native-fontawesome.svg?style=flat-square)](https://www.npmjs.com/package/react-native-fontawesome)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-fontawesome.svg?style=flat-square)](https://www.npmjs.com/package/react-native-fontawesome)
+
 # Benefits
 - No bloatware, one package with one iconset, nothing more nothing less
 - Full set of FontAwesome Icons properly updated
@@ -8,10 +11,37 @@ React Native Fontawesome Icons
 - Uses the OS to render icons, for best in class performance (refer to performance note bellow)
 
 # Installation process
-No need to link binaries just import the package and include the Font File
+`npm i react-native-fontawesome`
+
+This module uses Font Awesome version [4.7.0](http://fontawesome.io/assets/font-awesome-4.7.0.zip). There is no need to link binaries just import the package and include the Font File
 in your project.
 
+Follow this guides for adding FontAwesome.ttf to your projects:
+
+[Adding Custom Fonts to A React Native Application for IOS](https://medium.com/@dabit3/adding-custom-fonts-to-react-native-b266b41bff7f)
+
+[Custom Fonts in React Native for Android](https://medium.com/@gattermeier/custom-fonts-in-react-native-for-android-b8a331a7d2a7)
+
+
 # Usage
+```javascript
+import FontAwesome from 'react-native-fontawesome';
+
+...
+
+render() {
+ return (
+   <View>
+
+   <TouchableHighlight>
+   <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}><FontAwesome>
+               key
+             </FontAwesome>  Text</Text>
+   </TouchableHighlight>
+   </View>
+ );
+},
+```
 
 # Note on hyphens
 Javascript don't accept hyphens as valid object names hence all hyphens where removed and
