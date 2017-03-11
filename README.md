@@ -1,6 +1,9 @@
 # react-native-fontawesome
 React Native Fontawesome Icons
 
+[![npm version](https://img.shields.io/npm/v/react-native-fontawesome.svg?style=flat-square)](https://www.npmjs.com/package/react-native-fontawesome)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-fontawesome.svg?style=flat-square)](https://www.npmjs.com/package/react-native-fontawesome)
+
 # Benefits
 - No bloatware, one package with one iconset, nothing more nothing less
 - Full set of FontAwesome Icons properly updated
