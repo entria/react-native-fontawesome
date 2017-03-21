@@ -13,22 +13,12 @@ React Native Fontawesome Icons
 # Installation process
 
 ## Using yarn
-
-### Install
 `npm i -g yarn`
 
 `yarn add react-native-fontawesome`
 
-### Uninstall
-`yarn remove react-native-fontawesome`
-
 ## Using npm
-
-### Install
 `npm i --save react-native-fontawesome`
-
-### Uninstall
-`npm uninstall -S -D react-native-fontawesome`
 
 This module uses Font Awesome version [4.7.0](http://fontawesome.io/assets/font-awesome-4.7.0.zip). There is no need to link binaries just import the package and include the Font File
 in your project.
