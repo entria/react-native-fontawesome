@@ -11,7 +11,24 @@ React Native Fontawesome Icons
 - Uses the OS to render icons, for best in class performance (refer to performance note bellow)
 
 # Installation process
-`npm i react-native-fontawesome`
+
+## Using yarn
+
+### Install
+`npm install -g yarn`
+
+`yarn add react-native-fontawesome`
+
+### Uninstall
+`yarn react-native-fontawesome`
+
+## Using npm
+
+### Install
+`npm install --save react-native-fontawesome`
+
+### Uninstall
+`npm uninstall --save react-native-fontawesome`
 
 This module uses Font Awesome version [4.7.0](http://fontawesome.io/assets/font-awesome-4.7.0.zip). There is no need to link binaries just import the package and include the Font File
 in your project.
