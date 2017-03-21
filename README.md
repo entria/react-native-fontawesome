@@ -28,18 +28,17 @@ Follow this guides for adding FontAwesome.ttf to your projects:
 import FontAwesome from 'react-native-fontawesome';
 
 ...
-
 render() {
- return (
-   <View>
-
-   <TouchableHighlight>
-   <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}><FontAwesome>
-               key
-             </FontAwesome>  Text</Text>
-   </TouchableHighlight>
-   </View>
- );
+  return (
+    <View>
+      <TouchableHighlight>
+        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
+          <FontAwesome> key</FontAwesome>
+          Text
+        </Text>
+      </TouchableHighlight>
+    </View>
+  );
 },
 ```
 
