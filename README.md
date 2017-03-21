@@ -20,7 +20,7 @@ React Native Fontawesome Icons
 `yarn add react-native-fontawesome`
 
 ### Uninstall
-`yarn react-native-fontawesome`
+`yarn remove react-native-fontawesome`
 
 ## Using npm
 
