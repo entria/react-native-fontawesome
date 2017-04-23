@@ -16,7 +16,7 @@ class Icon extends Component {
         style={[styles.icon, { color }, style]}
         ref={component => this._root = component}
       >
-        {Icons[children]}
+        {children}
       </Text>
     );
   }
