@@ -32,7 +32,7 @@ Follow this guides for adding FontAwesome.ttf to your projects:
 
 # Usage
 ```javascript
-import FontAwesome from 'react-native-fontawesome';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 ...
 render() {
@@ -40,7 +40,7 @@ render() {
     <View>
       <TouchableHighlight>
         <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
-          <FontAwesome> key</FontAwesome>
+          <FontAwesome>{Icons.chevronLeft}</FontAwesome>
           Text
         </Text>
       </TouchableHighlight>
@@ -58,6 +58,6 @@ Example: `th-large` becomes `thLarge`
 # Why this is fast, and uses almost no extra memory
 This package uses the Text element to render Icons. The Text element delegates
 to the OS the render process of the icons based on the Font file.
-Both IOS and Android render fonts amazingly fast with little memory overhead. In essence  
+Both IOS and Android render fonts amazingly fast with little memory overhead. In essence
 FontAwesome.ttf will be used by the OS to render icons and will benefit of years
 of native software improvement as well hardware acceleration.
