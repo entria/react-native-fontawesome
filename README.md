@@ -61,3 +61,7 @@ to the OS the render process of the icons based on the Font file.
 Both IOS and Android render fonts amazingly fast with little memory overhead. In essence
 FontAwesome.ttf will be used by the OS to render icons and will benefit of years
 of native software improvement as well hardware acceleration.
+
+# Do you want to create a Custom Font with your Icons?
+
+Take a look on this https://github.com/entria/font-generator, it will generate a TTF font to be used much like this package
