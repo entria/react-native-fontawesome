@@ -55,6 +55,17 @@ names converted to camel case.
 
 Example: `th-large` becomes `thLarge`
 
+# Styling
+You can apply styles directly into the FontAwesome RN component by just passing a style as you do in a `<Text>` component.
+
+```
+
+<FontAwesome style={{fontSize: 32}}>
+    {Icons.chevronLeft}
+</FontAwesome>
+
+```
+
 # Why this is fast, and uses almost no extra memory
 This package uses the Text element to render Icons. The Text element delegates
 to the OS the render process of the icons based on the Font file.
@@ -65,3 +76,4 @@ of native software improvement as well hardware acceleration.
 # Do you want to create a Custom Font with your Icons?
 
 Take a look on this https://github.com/entria/font-generator, it will generate a TTF font to be used much like this package
+
