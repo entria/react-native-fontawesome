@@ -50,7 +50,7 @@ render() {
 ```
 
 # Note on hyphens
-Javascript don't accept hyphens as valid object names hence all hyphens where removed and
+Javascript don't accept hyphens as valid object names hence all hyphens were removed and
 names converted to camel case.
 
 Example: `th-large` becomes `thLarge`
