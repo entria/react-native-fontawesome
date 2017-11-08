@@ -794,4 +794,26 @@ youtubePlay: "\uf16a",
 youtubeSquare: "\uf166",
 };
 
-export default Icons;
+
+function translateFromHyphenedToCamelCase(hyphenedIconName) {
+  return hyphenedIconName.split('-').map((unhyphenedPart, index) => {
+    if (index == 0) {
+      return unhyphenedPart;
+    } else {
+      return unhyphenedPart.substr(0, 1).toUpperCase() + unhyphenedPart.substr(1);
+    }
+  }).join('');
+}
+
+//intercept get for attributes to fallback on translation (hyphened -> camelCase)
+const IconsWithFallbackTranslation = new Proxy(Icons, {
+  get: (target, prop) => {
+    if (target[prop] == undefined && prop.includes('-')) {
+      return target[translateFromHyphenedToCamelCase(hyphenedIconName)];
+    } else {
+      return target[prop];
+    }
+  }
+});
+
+export default IconsWithFallbackTranslation;
