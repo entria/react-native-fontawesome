@@ -9,10 +9,11 @@ class Icon extends Component {
   }
 
   render() {
-    const { style, color, children } = this.props;
+    const { style, color, children, ...props } = this.props;
 
     return (
       <Text
+        {...props}
         style={[styles.icon, { color }, style]}
         ref={component => this._root = component}
       >
