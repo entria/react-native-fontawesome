@@ -22,7 +22,11 @@
     "type": "git",
     "url": "https://github.com/rturk/react-native-fontawesome.git"
   },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^20.0.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   }
 }
