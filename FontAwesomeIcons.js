@@ -809,7 +809,7 @@ function translateFromHyphenedToCamelCase(hyphenedIconName) {
 const IconsWithFallbackTranslation = new Proxy(Icons, {
   get: (target, prop) => {
     if (target[prop] == undefined && prop.includes('-')) {
-      return target[translateFromHyphenedToCamelCase(hyphenedIconName)];
+      return target[translateFromHyphenedToCamelCase(prop)];
     } else {
       return target[prop];
     }
