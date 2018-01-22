@@ -795,25 +795,27 @@ youtubeSquare: "\uf166",
 };
 
 
-function translateFromHyphenedToCamelCase(hyphenedIconName) {
-  return hyphenedIconName.split('-').map((unhyphenedPart, index) => {
-    if (index == 0) {
-      return unhyphenedPart;
+function translateFromCamelCaseToHyphened(camelCaseIconName) {
+  return camelCaseIconName.split(/(?=[A-Z])/).map((camelCasePart, index, allParts) => {
+    if (index == allParts.length - 1) {
+      return camelCasePart.toLowerCase();
     } else {
-      return unhyphenedPart.substr(0, 1).toUpperCase() + unhyphenedPart.substr(1);
+      return camelCasePart.toLowerCase() + '-';
     }
   }).join('');
 }
 
-//intercept get for attributes to fallback on translation (hyphened -> camelCase)
-const IconsWithFallbackTranslation = new Proxy(Icons, {
-  get: (target, prop) => {
-    if (target[prop] == undefined && prop.includes('-')) {
-      return target[translateFromHyphenedToCamelCase(prop)];
-    } else {
-      return target[prop];
-    }
+Object.keys(Icons).forEach((iconKey) => {
+  //check camelCase
+  if (iconKey != iconKey.toLowerCase()) {
+    const hyphenedIconName = translateFromCamelCaseToHyphened(iconKey);
+    //intercept equivalent hyphened icon key so we can translate
+    Object.defineProperty(Icons, hyphenedIconName, {
+      get: () => {
+        return Icons[iconKey];
+      }
+    });
   }
 });
 
-export default IconsWithFallbackTranslation;
+export default Icons;
