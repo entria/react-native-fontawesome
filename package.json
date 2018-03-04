@@ -18,6 +18,7 @@
   ],
   "license": "MIT",
   "main": "Icon.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/rturk/react-native-fontawesome.git"
