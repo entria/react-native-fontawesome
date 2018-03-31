@@ -20,7 +20,7 @@ React Native Fontawesome Icons
 ## Using npm
 `npm i --save react-native-fontawesome`
 
-This module uses Font Awesome version [4.7.0](http://fontawesome.io/assets/font-awesome-4.7.0.zip). There is no need to link binaries just import the package and include the Font File
+This module uses Font Awesome version [4.7.0](https://fontawesome.com/v4.7.0/assets/font-awesome-4.7.0.zip). There is no need to link binaries just import the package and include the Font File
 in your project.
 
 Follow this guides for adding FontAwesome.ttf to your projects:
