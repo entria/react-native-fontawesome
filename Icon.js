@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Platform, Text, StyleSheet } from 'react-native';
 
 import Icons from './FontAwesomeIcons';
 
@@ -23,9 +23,10 @@ class Icon extends Component {
   }
 }
 
+const fontFamily = Platform.OS === 'ios' ? 'FontAwesome' : 'fontawesome-webfont';
 const styles = StyleSheet.create({
   icon: {
-    fontFamily:       'FontAwesome',
+    fontFamily:       fontFamily,
     backgroundColor:  'transparent',
   },
 });
