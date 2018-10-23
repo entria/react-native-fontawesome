@@ -32,7 +32,7 @@ class Icon extends Component {
   }
 
   render() {
-    const { style, color, children, type } = this.props;
+    const { style, color, children, type, ...props } = this.props;
     const font = { fontFamily: type || IconTypes.FAS }
 
     return (
