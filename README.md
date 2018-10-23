@@ -65,8 +65,10 @@ import {
 const correctIconName = parseIconName('fas fa-chevron-left') // will be parsed to chevronLeft
 
 // So you can use it like this:
-Icons[correctName]
+Icons[correctIconName]
 ```
+
+You can use that in some cases when you store the icon from web in you database and then you use dynamically in your mobile.
 
 # Styling
 You can apply styles directly into the FontAwesome RN component by just passing a style as you do in a `<Text>` component.
