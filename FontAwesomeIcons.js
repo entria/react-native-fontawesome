@@ -1198,4 +1198,27 @@ const Icons = {
   zhihu: "\uf63f",
 }
 
+function translateFromCamelCaseToHyphened(camelCaseIconName) {
+  return camelCaseIconName.split(/(?=[A-Z])/).map((camelCasePart, index, allParts) => {
+    if (index == allParts.length - 1) {
+      return camelCasePart.toLowerCase();
+    } else {
+      return camelCasePart.toLowerCase() + '-';
+    }
+  }).join('');
+}
+
+Object.keys(Icons).forEach((iconKey) => {
+  //check camelCase
+  if (iconKey != iconKey.toLowerCase()) {
+    const hyphenedIconName = translateFromCamelCaseToHyphened(iconKey);
+    //intercept equivalent hyphened icon key so we can translate
+    Object.defineProperty(Icons, hyphenedIconName, {
+      get: () => {
+        return Icons[iconKey];
+      }
+    });
+  }
+});
+
 export default Icons
