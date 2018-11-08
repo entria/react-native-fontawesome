@@ -62,10 +62,12 @@ import {
   parseIconName 
 } from 'react-native-fontawesome';
 
-const correctIconName = parseIconName('fas fa-chevron-left') // will be parsed to chevronLeft
+const validIcon = parseIconName('fas fa-chevron-left') // will be parsed to chevronLeft
 
-// So you can use it like this:
-Icons[correctIconName]
+// So anywhere you would have used Icons.chevronLeft (or some other icon name) 
+// you can now just use the returned value directly (validIcon in this example).  
+// The function parseIconName internally returns an Icons[parsedIconName] result.
+
 ```
 
 You can use that in some cases when you store the icon from web in you database and then you use dynamically in your mobile.
