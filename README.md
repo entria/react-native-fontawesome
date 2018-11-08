@@ -20,7 +20,7 @@ React Native Fontawesome Icons
 ## Using npm
 `npm i --save react-native-fontawesome`
 
-This module uses Font Awesome version [4.7.0](https://fontawesome.com/v4.7.0/assets/font-awesome-4.7.0.zip). There is no need to link binaries just import the package and include the Font File in your project.
+This module uses Font Awesome version [5.4.1](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.4.1). There is no need to link binaries just import the package and include the Font File in your project.
 
 This package will not download Font Awesome for you. You have to manually download the package and put it into your working folder.
 
@@ -32,19 +32,17 @@ Follow this guides for adding FontAwesome.ttf to your projects:
 
 
 # Usage
-```javascript
+```jsx
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 ...
 render() {
   return (
     <View>
-      <TouchableHighlight>
-        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
-          <FontAwesome>{Icons.chevronLeft}</FontAwesome>
-          Text
-        </Text>
-      </TouchableHighlight>
+      <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
+        <FontAwesome>{Icons.chevronLeft}</FontAwesome>
+        Text
+      </Text>
     </View>
   );
 },
@@ -56,16 +54,61 @@ names converted to camel case.
 
 Example: `th-large` becomes `thLarge`
 
+You can parse the name if you want, like this:
+
+```jsx
+import { 
+  Icons,
+  parseIconName 
+} from 'react-native-fontawesome';
+
+const validIcon = parseIconFromClassName('fas fa-chevron-left') // will be parsed to chevronLeft
+
+// So anywhere you would have used Icons.chevronLeft (or some other icon name) 
+// you can now just use the returned value directly (validIcon in this example).  
+// The function parseIconName internally returns an Icons[parsedIconName] result.
+
+```
+
+You can use that in some cases when you store the icon from web in you database and then you use dynamically in your mobile.
+
 # Styling
 You can apply styles directly into the FontAwesome RN component by just passing a style as you do in a `<Text>` component.
 
-```
-
+```jsx
 <FontAwesome style={{fontSize: 32}}>
     {Icons.chevronLeft}
 </FontAwesome>
-
 ```
+
+By default, the `fontFamily` used is `fa_solid_900` but you can use the `IconTypes` object to set the right `fontFamily`, like this:
+
+```jsx
+import FontAwesome, { 
+  Icons,
+  IconTypes
+} from 'react-native-fontawesome';
+
+...
+render() {
+  return (
+    <View>
+        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
+          <FontAwesome type={IconTypes.FAR}>{Icons.chevronLeft}</FontAwesome>
+          Text
+        </Text>
+    </View>
+  );
+},
+```
+
+The valid options are:
+
+* `IconTypes.FAS` - Font Awesome Solid (Default)
+* `IconTypes.FAR` - Font Awesome Regular
+* `IconTypes.FAB` - Font Awesome Brands
+
+You can find all font families here: [fontawesome-free-5.4.1-web.zip](https://github.com/FortAwesome/Font-Awesome/releases/download/5.4.1/fontawesome-free-5.4.1-web.zip)
 
 # Why this is fast, and uses almost no extra memory
 This package uses the Text element to render Icons. The Text element delegates
