@@ -64,8 +64,8 @@ import {
 
 const validIcon = parseIconName('fas fa-chevron-left') // will be parsed to chevronLeft
 
-// So anywhere you used to use Icons.tasks (or some other icon name) you can now just use the returned icon.
-// validIcon in this example... parseIconName internally returns an Icons[parsedIconName]
+// So anywhere you would have used Icons.chevronLeft (or some other icon name) you can now just use the returned
+// value directly (validIcon in this example).  The function parseIconName internally returns an Icons[parsedIconName] result.
 
 ```
 
