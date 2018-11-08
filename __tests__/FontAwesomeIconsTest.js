@@ -1,5 +1,5 @@
 import FontAwesomeIcons from '../FontAwesomeIcons';
-import { parseIconName } from '../Icon'
+import { parseIconFromClassName } from '../Icon'
 
 jest.mock('react-native', () => {
   return {
@@ -19,6 +19,6 @@ describe('Testing FontAwesomeIcons', () => {
   });
 
   it('parse original classNames from fontawesome to camelCase icon names', () => {
-    expect(parseIconName('fa fa-first-order')).toBe(FontAwesomeIcons['firstOrder'])
+    expect(parseIconFromClassName('fa fa-first-order')).toBe(FontAwesomeIcons['firstOrder'])
   })
 });

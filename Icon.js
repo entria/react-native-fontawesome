@@ -8,7 +8,7 @@ const IconTypes = {
   FAB: 'fa_brands_400'
 }
 
-const parseIconName = (iconName) => {
+const parseIconFromClassName = (iconName) => {
   if (!iconName) return;
 
   iconName = iconName.replace(/(fa\-)/gi, '')
@@ -53,5 +53,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export { Icons, IconTypes, parseIconName };
+export { Icons, IconTypes, parseIconFromClassName };
 export default Icon;

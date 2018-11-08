@@ -62,7 +62,7 @@ import {
   parseIconName 
 } from 'react-native-fontawesome';
 
-const validIcon = parseIconName('fas fa-chevron-left') // will be parsed to chevronLeft
+const validIcon = parseIconFromClassName('fas fa-chevron-left') // will be parsed to chevronLeft
 
 // So anywhere you would have used Icons.chevronLeft (or some other icon name) 
 // you can now just use the returned value directly (validIcon in this example).  
