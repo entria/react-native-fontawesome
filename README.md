@@ -18,6 +18,8 @@ Download FontAwesome [font files](https://github.com/FortAwesome/Font-Awesome/re
 
 Create `assets/fonts` folder in the root of your project and copy `ttf` files there.
 
+Replace `-` with `_` in `ttf` file names to match default `fontFamily` names (e.g. `fa-solid-900.ttf` => `fa_solid_900.ttf`)
+
 Add the following to `package.json`:
 
 ```json
