@@ -117,8 +117,6 @@ The valid options are:
 * `IconTypes.FAR` - Font Awesome Regular
 * `IconTypes.FAB` - Font Awesome Brands
 
-You can find all font families here: [fontawesome-free-5.4.1-web.zip](https://github.com/FortAwesome/Font-Awesome/releases/download/5.4.1/fontawesome-free-5.4.1-web.zip)
-
 # Why this is fast, and uses almost no extra memory
 This package uses the Text element to render Icons. The Text element delegates
 to the OS the render process of the icons based on the Font file.
