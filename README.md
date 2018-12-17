@@ -12,6 +12,26 @@ React Native Fontawesome Icons
 
 # Installation process
 
+## Linking font files
+
+Download FontAwesome [font files](https://github.com/FortAwesome/Font-Awesome/releases/download/5.4.1/fontawesome-free-5.4.1-web.zip)
+
+Create `assets/fonts` folder in the root of your project and copy `ttf` files there.
+
+Add the following to `package.json`:
+
+```json
+"rnpm": {
+  "assets": [
+    "./assets/fonts/"
+  ]
+}
+```
+
+Link font files for both platforms by running `react-native link`
+
+If you prefer, you can link font files [manually](https://medium.com/@kswanie21/custom-fonts-in-react-native-tutorial-for-ios-android-76ceeaa0eb78)
+
 ## Using yarn
 `npm i -g yarn`
 
@@ -19,17 +39,6 @@ React Native Fontawesome Icons
 
 ## Using npm
 `npm i --save react-native-fontawesome`
-
-This module uses Font Awesome version [5.4.1](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.4.1). There is no need to link binaries just import the package and include the Font File in your project.
-
-This package will not download Font Awesome for you. You have to manually download the package and put it into your working folder.
-
-Follow this guides for adding FontAwesome.ttf to your projects:
-
-[Adding Custom Fonts to A React Native Application for IOS](https://medium.com/@dabit3/adding-custom-fonts-to-react-native-b266b41bff7f)
-
-[Custom Fonts in React Native for Android](https://medium.com/@gattermeier/custom-fonts-in-react-native-for-android-b8a331a7d2a7)
-
 
 # Usage
 ```jsx
@@ -107,8 +116,6 @@ The valid options are:
 * `IconTypes.FAS` - Font Awesome Solid (Default)
 * `IconTypes.FAR` - Font Awesome Regular
 * `IconTypes.FAB` - Font Awesome Brands
-
-You can find all font families here: [fontawesome-free-5.4.1-web.zip](https://github.com/FortAwesome/Font-Awesome/releases/download/5.4.1/fontawesome-free-5.4.1-web.zip)
 
 # Why this is fast, and uses almost no extra memory
 This package uses the Text element to render Icons. The Text element delegates
