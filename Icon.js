@@ -3,9 +3,9 @@ import { Text, StyleSheet, Platform } from 'react-native';
 
 import Icons from './FontAwesomeIcons';
 const IconTypes = {
-  FAR: Platform.OS === 'ios' ? 'FontAwesome5FreeRegular' : 'fa_regular_400',
-  FAS: Platform.OS === 'ios' ? 'FontAwesome5FreeSolid' : 'fa_solid_900',
-  FAB: Platform.OS === 'ios' ? 'FontAwesome5BrandsRegular' : 'fa_brands_400'
+  FAR: Platform.OS === 'ios' ? 'FontAwesome5FreeRegular' : 'fa-regular-400',
+  FAS: Platform.OS === 'ios' ? 'FontAwesome5FreeSolid' : 'fa-solid-900',
+  FAB: Platform.OS === 'ios' ? 'FontAwesome5BrandsRegular' : 'fa-brands-400'
 }
 
 const parseIconFromClassName = (iconName) => {
