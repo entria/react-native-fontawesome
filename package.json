@@ -1,10 +1,40 @@
 {
-  "name": "react-native-fontawesome",
-  "description": "Font Awesome Icons for React Native",
-  "version": "6.0.1",
-  "author": "Rafael Turk",
+  "_from": "git+https://github.com/leandrosimoes/react-native-fontawesome.git",
+  "_id": "react-native-fontawesome@5.7.0",
+  "_inBundle": false,
+  "_location": "/react-native-fontawesome",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com:leandrosimoes/react-native-fontawesome.git",
+    "rawSpec": "https://github.com:leandrosimoes/react-native-fontawesome.git",
+    "saveSpec": "git+https://github.com/leandrosimoes/react-native-fontawesome.git",
+    "fetchSpec": "https://github.com/leandrosimoes/react-native-fontawesome.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/leandrosimoes/react-native-fontawesome.git#2ad40bf919342b133f4e3d9b78db29e834dee4c8",
+  "_spec": "https://github.com:leandrosimoes/react-native-fontawesome.git",
+  "_where": "E:\\My Documents\\projects\\test-rn-fontawesome\\test_rn_fontawesome",
+  "author": {
+    "name": "Rafael Turk"
+  },
   "bugs": {
     "url": "https://github.com/rturk/react-native-fontawesome/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Font Awesome Icons for React Native",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react-native": "^4.0.1",
+    "jest": "^20.0.4",
+    "react": "^16.6.1",
+    "react-native": "^0.57.4"
   },
   "homepage": "https://github.com/rturk/react-native-fontawesome",
   "keywords": [
@@ -18,20 +48,14 @@
   ],
   "license": "MIT",
   "main": "Icon.js",
-  "types": "index.d.ts",
+  "name": "react-native-fontawesome",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rturk/react-native-fontawesome.git"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-es2015-spread": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react-native": "^4.0.1",
-    "jest": "^20.0.4",
-    "react": "^16.6.1",
-    "react-native": "^0.57.4"
+    "url": "git+https://github.com/rturk/react-native-fontawesome.git"
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "types": "index.d.ts",
+  "version": "5.7.0"
 }

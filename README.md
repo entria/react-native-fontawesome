@@ -12,26 +12,6 @@ React Native Fontawesome Icons
 
 # Installation process
 
-## Linking font files
-
-Download FontAwesome [font files](https://github.com/FortAwesome/Font-Awesome/releases/download/5.4.1/fontawesome-free-5.4.1-web.zip)
-
-Create `assets/fonts` folder in the root of your project and copy `ttf` files there.
-
-Add the following to `package.json`:
-
-```json
-"rnpm": {
-  "assets": [
-    "./assets/fonts/"
-  ]
-}
-```
-
-Link font files for both platforms by running `react-native link`
-
-If you prefer, you can link font files [manually](https://medium.com/@kswanie21/custom-fonts-in-react-native-tutorial-for-ios-android-76ceeaa0eb78)
-
 ## Using yarn
 `npm i -g yarn`
 
@@ -40,18 +20,28 @@ If you prefer, you can link font files [manually](https://medium.com/@kswanie21/
 ## Using npm
 `npm i --save react-native-fontawesome`
 
+This module uses Font Awesome version [5.9.0](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.9.0). There is no need to link binaries just import the package and include the Font File in your project.
+
+This package will not download Font Awesome for you. You have to manually download the package and put it into your working folder.
+
+Follow this guides for adding FontAwesome.ttf to your projects:
+
+[Adding Custom Fonts to A React Native Application for IOS](https://medium.com/@dabit3/adding-custom-fonts-to-react-native-b266b41bff7f)
+
+[Custom Fonts in React Native for Android](https://medium.com/@gattermeier/custom-fonts-in-react-native-for-android-b8a331a7d2a7)
+
+
 # Usage
 ```jsx
-import FontAwesome, { Icons } from 'react-native-fontawesome';
+import FontAwesome, { SolidIcons, RegularIcons, BrandIcons } from 'react-native-fontawesome';
 
 ...
 render() {
   return (
     <View>
-      <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
-        <FontAwesome>{Icons.chevronLeft}</FontAwesome>
-        Text
-      </Text>
+        <FontAwesome icon={SolidIcons.smile} />
+        <FontAwesome icon={RegularIcons.smileWink} />
+        <FontAwesome icon={BrandIcons.github} />
     </View>
   );
 },
@@ -66,17 +56,16 @@ Example: `th-large` becomes `thLarge`
 You can parse the name if you want, like this:
 
 ```jsx
-import { 
-  Icons,
-  parseIconName 
-} from 'react-native-fontawesome';
+import { parseIconName } from 'react-native-fontawesome';
 
 const validIcon = parseIconFromClassName('fas fa-chevron-left') // will be parsed to chevronLeft
 
 // So anywhere you would have used Icons.chevronLeft (or some other icon name) 
 // you can now just use the returned value directly (validIcon in this example).  
-// The function parseIconName internally returns an Icons[parsedIconName] result.
+// The function parseIconName internally returns an BrandIcons[parsedIconName] or SolidIcons[parsedIconName] or RegularIcons[parsedIconName] result.
+// So you can use like that:
 
+<FontAwesome style={{fontSize: 32}} icon={validIcon}>
 ```
 
 You can use that in some cases when you store the icon from web in you database and then you use dynamically in your mobile.
@@ -85,37 +74,23 @@ You can use that in some cases when you store the icon from web in you database 
 You can apply styles directly into the FontAwesome RN component by just passing a style as you do in a `<Text>` component.
 
 ```jsx
-<FontAwesome style={{fontSize: 32}}>
-    {Icons.chevronLeft}
-</FontAwesome>
+<FontAwesome style={{fontSize: 32}} icon={BrandIcons.github}>
 ```
 
-By default, the `fontFamily` used is `fa_solid_900` but you can use the `IconTypes` object to set the right `fontFamily`, like this:
+You can find all font families files here: [fontawesome-free-5.9.0-web.zip](https://use.fontawesome.com/releases/v5.9.0/fontawesome-free-5.9.0-web.zip)
+
+# Warning!
+
+Font Awesome have some paid icons and the link above is for downloading the free icons set.
+So if you choose some icon from our list, and this icon does not show properly, check
+if the icon that you choose is a paid one before open a issue. In this case, you must 
+buy the PRO icons set in the [Font Awesome's PRO](https://fontawesome.com/pro) website.
+In case you are using a paid icon, and you are using a paid icon set that you already
+bough, you must pass a `pro` property to the icon, like this:
 
 ```jsx
-import FontAwesome, { 
-  Icons,
-  IconTypes
-} from 'react-native-fontawesome';
-
-...
-render() {
-  return (
-    <View>
-        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>
-          <FontAwesome type={IconTypes.FAR}>{Icons.chevronLeft}</FontAwesome>
-          Text
-        </Text>
-    </View>
-  );
-},
+<FontAwesome icon={RegularIcons.exclamationTriangle} pro={true}>
 ```
-
-The valid options are:
-
-* `IconTypes.FAS` - Font Awesome Solid (Default)
-* `IconTypes.FAR` - Font Awesome Regular
-* `IconTypes.FAB` - Font Awesome Brands
 
 # Why this is fast, and uses almost no extra memory
 This package uses the Text element to render Icons. The Text element delegates
