@@ -1,30 +1,7 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, Platform } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 
-import Icons from './FontAwesomeIcons';
-const IconTypes = {
-  FAR: Platform.OS === 'ios' ? 'FontAwesome5FreeRegular' : 'fa-regular-400',
-  FAS: Platform.OS === 'ios' ? 'FontAwesome5FreeSolid' : 'fa-solid-900',
-  FAB: Platform.OS === 'ios' ? 'FontAwesome5BrandsRegular' : 'fa-brands-400'
-}
-
-const parseIconFromClassName = (iconName) => {
-  if (!iconName) return;
-
-  iconName = iconName.replace(/(fa\-)/gi, '')
-  iconName = iconName.replace(/(fa|fas|far)( )/gi, '')
-
-  let nameParts = iconName.match(/(\-)(\w{1,1})/gi) || []
-
-  nameParts.forEach(m => {
-    iconName = iconName.replace(m, m.toUpperCase())
-  })
-
-  iconName = iconName.replace(/\-/gi, '') 
-  iconName = (iconName || '').trim()
-
-  return Icons[iconName]
-}
+import { SolidIcons, RegularIcons, BrandIcons, parseIconFromClassName } from './FontAwesomeIcons';
 
 class Icon extends Component {
   setNativeProps(nativeProps) {
@@ -32,8 +9,18 @@ class Icon extends Component {
   }
 
   render() {
-    const { style, color, children, type, ...props } = this.props;
-    const font = { fontFamily: type || IconTypes.FAS }
+    const { style, color, icon, pro, ...props } = this.props;
+    const [code, type] = (icon || '').split('|')
+
+    const IconType = type === 'brand' ? BrandIcons :
+                     type === 'regular' ? RegularIcons
+                     : SolidIcons
+
+    const font = { fontFamily: IconType._fontFamily || '' }
+
+    if (pro) {
+      font.fontFamily = font.fontFamily.replace('Free', 'Pro')
+    }
 
     return (
       <Text
@@ -41,7 +28,7 @@ class Icon extends Component {
         style={[styles.icon, { color }, style, font]}
         ref={component => this._root = component}
       >
-        {children}
+        {code}
       </Text>
     );
   }
@@ -53,5 +40,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export { Icons, IconTypes, parseIconFromClassName };
+export { SolidIcons, RegularIcons, BrandIcons, parseIconFromClassName };
 export default Icon;

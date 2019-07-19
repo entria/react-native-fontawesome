@@ -1,0 +1,3 @@
+rootProject.name = 'test_rn_fontawesome'
+
+include ':app'
