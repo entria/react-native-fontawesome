@@ -103,3 +103,18 @@ of native software improvement as well hardware acceleration.
 
 Take a look on this https://github.com/entria/font-generator, it will generate a TTF font to be used much like this package
 
+# Sample project
+
+In this repository you'll find a `sample/` folder that contains a working sample project, tested on both, Android and IOS.
+
+### - Running on Android
+
+* First `npm i` or `yarn` to install de dependencies
+* Then `react-native run-android` to build and run the application
+
+### - Running on IOS
+
+* First `npm i` or `yarn` to install de dependencies
+* Then, open a terminal in the `sample/ios/` folder then execute `Pod install` to install Pods
+* Then `react-native run-ios` to build and run the application in the emulator
+* If you want to run in a device, just open the `sample/ios/sample.xcworkspace` in `XCode` and click the `Run` button with the device plugged and selected.
