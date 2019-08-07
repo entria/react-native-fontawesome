@@ -1,4 +1,4 @@
-package com.test_rn_fontawesome;
+package com.sample;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "test_rn_fontawesome";
+        return "sample";
     }
 }
